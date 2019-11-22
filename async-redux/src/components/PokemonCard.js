@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addPokemon } from '../actions';
+// import { addPokemon } from '../actions';
 
 const PokemonCard = (props) => {
-
     // const handleAdd = () => {
     //     props.addPokemon(props.results);
     // }
@@ -27,4 +26,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(null, {addPokemon})(PokemonCard);
+export default connect(null, {})(PokemonCard);

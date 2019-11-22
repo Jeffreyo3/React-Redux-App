@@ -17,17 +17,17 @@ export const getPKMNData = () => dispatch => {
     axios
         .get('https://pokeapi.co/api/v2/pokemon')
         .then(res => {
-            console.log(res);
+            console.log(res.data.results);
             dispatch({
                 type: PKMN_LOAD_SUCCESS,
-                payload: res.data.value
+                payload: res.data.results
             })}
         )
         .catch(err => {
             console.log(err);
             dispatch({
                 type: PKMN_LOAD_FAILURE,
-                payload: "error loading data"
+                payload: err + "error loading data"
             });
         });
 };
@@ -35,9 +35,9 @@ export const getPKMNData = () => dispatch => {
 ///////////////////////////////////
 ////////// User actions  //////////
 ///////////////////////////////////
-export const addPokemon = pokemon => {
-    return {
-        type: ADD_PKMN,
-        payload: pokemon
-    };
-};
+// export const addPokemon = pokemon => {
+//     return {
+//         type: ADD_PKMN,
+//         payload: pokemon
+//     };
+// };

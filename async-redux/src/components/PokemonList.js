@@ -7,12 +7,12 @@ import PokemonCard from './PokemonCard';
 
 
 const PokemonList = props => {
-
     return (
-        <>
+        <div className="pkmnlist">
             <button
                 onClick={() => {
                     props.getPKMNData();
+                    console.log("POKEMON LIST" + props.state);
                 }}>
                 Show me POKEMON!!
             </button>
@@ -20,20 +20,21 @@ const PokemonList = props => {
             {props.isLoading ? (
                 <div>Catching 'em All!</div>
             ) : (
-            <div className="pokemon-list">
-                {/* <p>{props.data.results.name}</p> */}
-                {props.data.results.map(pokemon => (
-                    <PokemonCard key={pokemon.name} pokemon={pokemon} />
-                ))}
-            </div>
+            <ul className="pokemon-list">
+                {console.log(props.data.results)}
+                {props.data.results.map(pokemon => {
+                    return <PokemonCard key={pokemon.name} pokemon={pokemon} />
+                })}
+            </ul>
             )}
 
-        </>
+        </div>
     );
 };
 
 const mapStateToProps = state => {
     return {
+        state: state,
         data: state.data,
         isLoading: state.isLoading,
         error: state.error
