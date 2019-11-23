@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>	&dArr;	 Scroll to Start 	&dArr;	</h1>
+        <h1>	&dArr;	 Press Start 	&dArr;	</h1>
       </header>
       <div>
         <h2>Pokemon</h2>

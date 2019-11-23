@@ -8,7 +8,7 @@ import PokemonCard from './PokemonCard';
 
 const PokemonList = props => {
     return (
-        <div className="pkmnlist">
+        <div className="pkmnListDiv">
             <button
                 onClick={() => {
                     props.getPKMNData();
@@ -20,12 +20,12 @@ const PokemonList = props => {
             {props.isLoading ? (
                 <div>Catching 'em All!</div>
             ) : (
-            <ul className="pokemon-list">
-                {console.log(props.data.results)}
+            <div className="pokemon-list">
+                {/* {console.log(props.data.results)} */}
                 {props.data.results.map(pokemon => {
                     return <PokemonCard key={pokemon.name} pokemon={pokemon} />
                 })}
-            </ul>
+            </div>
             )}
 
         </div>

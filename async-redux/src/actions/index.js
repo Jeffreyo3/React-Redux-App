@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 // Async action types
@@ -15,12 +16,12 @@ export const getPKMNData = () => dispatch => {
     dispatch({ type: PKMN_LOAD_START });
 
     axios
-        .get('https://pokeapi.co/api/v2/pokemon')
+        .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=40`)
         .then(res => {
-            console.log(res.data.results);
-            dispatch({
+            // console.log(res.data);
+                dispatch({
                 type: PKMN_LOAD_SUCCESS,
-                payload: res.data.results
+                payload: res.data
             })}
         )
         .catch(err => {
@@ -30,6 +31,9 @@ export const getPKMNData = () => dispatch => {
                 payload: err + "error loading data"
             });
         });
+
+
+    
 };
 
 ///////////////////////////////////
