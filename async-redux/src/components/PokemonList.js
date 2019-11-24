@@ -5,30 +5,43 @@ import { getPKMNData } from '../actions';
 import PokemonCard from './PokemonCard';
 
 
-
 const PokemonList = props => {
+
+    var myuniqueidcounter = 0;
+    function uniqueId() {
+        return myuniqueidcounter++;
+    }
+
     return (
+        <> 
         <div className="pkmnListDiv">
-            <button
-                onClick={() => {
-                    props.getPKMNData();
-                    console.log("POKEMON LIST" + props.state);
-                }}>
-                Show me POKEMON!!
-            </button>
+            <div className="buttons">
+                {/* <button>Previous</button> */}
+
+                <button className="getButton"
+                    onClick={() => {
+                        props.getPKMNData();
+                        // console.log("POKEMON LIST" + props.state);
+                    }}>
+                    S T A R T
+                </button>
+
+                {/* <button>Next</button> */}
+            </div>
             {props.error && <div>{props.error}</div>}
             {props.isLoading ? (
                 <div>Catching 'em All!</div>
             ) : (
             <div className="pokemon-list">
-                {/* {console.log(props.data.results)} */}
                 {props.data.results.map(pokemon => {
-                    return <PokemonCard key={pokemon.name} pokemon={pokemon} />
+                    Object.assign(pokemon, {id: uniqueId()})
+                    return <PokemonCard key={pokemon.Id} pokemon={pokemon} />
                 })}
             </div>
             )}
 
         </div>
+        </>
     );
 };
 

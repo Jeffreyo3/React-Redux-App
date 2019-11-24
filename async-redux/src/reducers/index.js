@@ -1,23 +1,21 @@
 import { 
     PKMN_LOAD_START, 
     PKMN_LOAD_SUCCESS, 
-    PKMN_LOAD_FAILURE 
+    PKMN_LOAD_FAILURE,
+    ADD_PKMN,
+    REMOVE_PKMN
 } from '../actions';
 
 const initialState = {
-    isLoading: false, 
-    error: "",
-    data: {
-        count: 0,
-        previous: null,
-        next: null,
-        results: [
-            {
-            "name": "",
-            "url": ""
-            }
-        ]
-    }
+  isLoading: false, 
+  error: "",
+  data: {
+      count: 0,
+      previous: null,
+      next: null,
+      results: []
+    },
+  userTeam: []
 }
 
 function reducer (state = initialState, action) {
@@ -45,6 +43,25 @@ function reducer (state = initialState, action) {
             error: action.payload,
             isLoading: false
           };
+
+
+        case ADD_PKMN:
+          console.log(state.userTeam);
+          if (state.userTeam.length >= 5) {
+            return state;
+          } else { return {
+            ...state,
+            userTeam: 
+            [...state.userTeam, action.payload]
+          }
+        }
+
+
+        case REMOVE_PKMN:
+          return {
+            ...state,
+            userTeam: [state.userTeam.filter(pokemon => pokemon.Id !== action.payload.Id)]
+          }
         default:
           return state;
 }};
