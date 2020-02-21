@@ -12,6 +12,18 @@ export const PKMN_LOAD_FAILURE = "PKMN_LOAD_FAILURE";
 export const ADD_PKMN = "ADD_PKMN";
 export const REMOVE_PKMN = "REMOVE_PKMN";
 
+
+var pokemonCounter = 1;
+var teamCouter = 0
+function uniqueId() {
+    return pokemonCounter++;
+}
+function teamId() {
+    return teamCouter++;
+}
+
+
+
 // Async action
 export const getPKMNData = () => dispatch => {
 
@@ -20,10 +32,10 @@ export const getPKMNData = () => dispatch => {
     axios
         .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`)
         .then(res => {
-            // console.log(res.data);
-                dispatch({
+            console.log(res.data);
+            dispatch({
                 type: PKMN_LOAD_SUCCESS,
-                payload: res.data
+                payload: { ...res.data, results: res.data.results.map(pokemon => Object.assign(pokemon, { id: uniqueId(pokemonCounter) })) }
             })
         })
         .catch(err => {
@@ -35,32 +47,15 @@ export const getPKMNData = () => dispatch => {
         });
 };
 
-// export const getNextPKMNData = () => dispatch => {
-//     dispatch({ type: PKMN_LOAD_START });
-//     axios  
-//         .get(`${state.data.next}`)
-//         .then(res => {
-//             dispatch({
-//                 type: PKMN_LOAD_SUCCESS,
-//                 payload: res.data
-//             })
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             dispatch({
-//                 type: PKMN_LOAD_FAILURE,
-//                 payload: err + "error loading data"
-//             });
-//         });
-// }
 
 ///////////////////////////////////
 ////////// User actions  //////////
 ///////////////////////////////////
 export const addPokemon = pokemon => {
+    const pkmnWithId = { ...pokemon, team_id: teamId(teamCouter) }
     return {
         type: ADD_PKMN,
-        payload: pokemon
+        payload: pkmnWithId
     };
 };
 
@@ -68,5 +63,6 @@ export const removePokemon = pokemon => {
     return {
         type: REMOVE_PKMN,
         payload: pokemon
+
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
-import { addPokemon } from '../actions';
+// import { addPokemon } from '../actions';
 
 const PokemonCard = (props) => {
     const handleAddPokemon = () => {
@@ -12,14 +12,16 @@ const PokemonCard = (props) => {
         <div className="pokemonCard">
 
             <div className="pokemonCardName">
-            {props.pokemon.name}
+                {props.pokemon.name}
             </div>
             <div className="add-button" onClick={handleAddPokemon}>
-            ADD
+                ADD
             </div>
         </div>
     )
 }
+
+export default PokemonCard;
 
 // const mapStateToProps = state => {
 //     return {
@@ -27,4 +29,4 @@ const PokemonCard = (props) => {
 //     }
 // }
 
-export default connect(null, {addPokemon})(PokemonCard);
+// export default connect(null, {addPokemon})(PokemonCard);
