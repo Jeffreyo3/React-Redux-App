@@ -42,11 +42,31 @@ export const getPKMNData = () => dispatch => {
             console.log(err);
             dispatch({
                 type: PKMN_LOAD_FAILURE,
-                payload: err + "error loading data"
+                payload: `Error loading data: ${err}`
             });
         });
 };
 
+export const getNewPKMNData = api => dispatch => {
+    dispatch({ type: PKMN_LOAD_START });
+
+    axios
+        .get(api)
+        .then(res => {
+            console.log(res.data);
+            dispatch({
+                type: PKMN_LOAD_SUCCESS,
+                payload: { ...res.data, results: res.data.results.map(pokemon => Object.assign(pokemon, { id: uniqueId(pokemonCounter) })) }
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({
+                type: PKMN_LOAD_FAILURE,
+                payload: `Error loading data: ${err}`
+            });
+        });
+}
 
 ///////////////////////////////////
 ////////// User actions  //////////

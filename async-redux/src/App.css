@@ -61,13 +61,15 @@
   margin: 4% auto;
 }
 
-.pokemonTearCard {
-  border: 2px solid forestgreen;
+.pokemonTeamCard {
+  /* border: 2px solid forestgreen; */
   /* width: 15%; */
   width: auto;
-  min-width: 250px;
+  max-width: 250px;
   height: auto;
   margin: 2% auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .pokemonTeamCardName {

@@ -1,32 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addPokemon, getPKMNData } from '../actions';
+import { addPokemon, getPKMNData, getNewPKMNData } from '../actions';
 import PokemonCard from './PokemonCard';
 
-
 const PokemonList = props => {
-
-    // var myuniqueidcounter = 0;
-    // function uniqueId() {
-    //     return myuniqueidcounter++;
-    // }
-
     return (
         <>
             <div className="pkmnListDiv">
                 <div className="buttons">
-                    {/* <button>Previous</button> */}
+                    {props.data.previous === null ?
+                        null :
+                        <button onClick={() => {
+                            props.getNewPKMNData(props.data.previous)
+                        }}>Previous</button>}
 
-                    <button className="getButton"
-                        onClick={() => {
-                            props.getPKMNData();
-                            // console.log("POKEMON LIST" + props.state);
-                        }}>
-                        S T A R T
-                </button>
+                    {props.data.results.length === 0 ?
+                        <button className="getButton"
+                            onClick={() => {
+                                props.getPKMNData();
+                            }}> S T A R T </button> :
+                        null}
 
-                    {/* <button>Next</button> */}
+                    {props.data.next === null ?
+                        null :
+                        <button onClick={() => {
+                            props.getNewPKMNData(props.data.next)
+                        }}>Next</button>}
+
                 </div>
                 {props.error && <div>{props.error}</div>}
                 {props.isLoading ? (
@@ -34,7 +35,7 @@ const PokemonList = props => {
                 ) : (
                         <div className="pokemon-list">
                             {props.data.results.map(pokemon => {
-                                return <PokemonCard key={pokemon.id} pokemon={pokemon} addPokemon={props.addPokemon} />
+                                return <PokemonCard key={pokemon.url} pokemon={pokemon} addPokemon={props.addPokemon} />
                             })}
                         </div>
                     )}
@@ -46,11 +47,10 @@ const PokemonList = props => {
 
 const mapStateToProps = state => {
     return {
-        state: state,
         data: state.data,
         isLoading: state.isLoading,
         error: state.error
     };
 };
 
-export default connect(mapStateToProps, { addPokemon, getPKMNData })(PokemonList);
+export default connect(mapStateToProps, { addPokemon, getPKMNData, getNewPKMNData })(PokemonList);

@@ -1,7 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-
-// import { addPokemon } from '../actions';
 
 const PokemonCard = (props) => {
     const handleAddPokemon = () => {
@@ -15,18 +12,10 @@ const PokemonCard = (props) => {
                 {props.pokemon.name}
             </div>
             <div className="add-button" onClick={handleAddPokemon}>
-                ADD
+                CATCH
             </div>
         </div>
     )
 }
 
 export default PokemonCard;
-
-// const mapStateToProps = state => {
-//     return {
-
-//     }
-// }
-
-// export default connect(null, {addPokemon})(PokemonCard);
