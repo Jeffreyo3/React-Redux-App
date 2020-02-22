@@ -11,6 +11,7 @@ const PokemonCard = (props) => {
             <div className="pokemonCardName">
                 {props.pokemon.name}
             </div>
+            {/* {<img src={props.pokemon.extra.sprites.front_default} />} */}
             <div className="add-button" onClick={handleAddPokemon}>
                 CATCH
             </div>

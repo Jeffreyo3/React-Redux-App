@@ -11,7 +11,7 @@ const PokemonTeamCard = (props) => {
         <div className="pokemonTeamCard">
 
             <div className="remove-button" onClick={handleRemovePokemon}>
-                X
+                RELEASE
             </div>
             <h3 className="pokemonTeamCardName">
                 {props.pokemon.name}

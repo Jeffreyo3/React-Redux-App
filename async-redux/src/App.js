@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // import { Route } from 'react-router-dom';
-import PokemonList from './components/PokemonList';
+import PokemonListContainer from './components/PokemonListContainer';
 import UserTeam from './components/UserTeam';
 
 
@@ -18,11 +18,11 @@ function App() {
         </div>
         <div className="main">
           <h2>Pokemon</h2>
-          <PokemonList />
+          <PokemonListContainer />
         </div>
 
       </div>
-      
+
     </div>
   );
 }

@@ -3,6 +3,7 @@ import {
   PKMN_LOAD_SUCCESS,
   PKMN_LOAD_FAILURE,
   ADD_PKMN,
+  ADD_DETAIL,
   REMOVE_PKMN
 } from '../actions';
 
@@ -15,6 +16,7 @@ const initialState = {
     next: null,
     results: []
   },
+  detailResults: [],
   userTeam: []
 }
 
@@ -32,6 +34,7 @@ function reducer(state = initialState, action) {
         ...state,
         data: {
           ...state.data,
+          count: action.payload.count,
           previous: action.payload.previous,
           next: action.payload.next,
           results: [...action.payload.results]
@@ -56,6 +59,14 @@ function reducer(state = initialState, action) {
             [...state.userTeam, action.payload]
         }
       }
+
+    case ADD_DETAIL:
+      return {
+        ...state,
+        isLoading: false,
+        detailResults: action.payload
+      }
+
 
     case REMOVE_PKMN:
       return {
