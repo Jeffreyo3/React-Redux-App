@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
 
-// import { Route } from 'react-router-dom';
 import PokemonListContainer from './components/PokemonListContainer';
 import UserTeam from './components/UserTeam';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>	&dArr;	 Press Start 	&dArr;	</h1>
-      </header>
+      <Header />
       <div className="body">
         <div className="left-bar">
           <UserTeam />
@@ -22,7 +21,7 @@ function App() {
         </div>
 
       </div>
-
+      <Footer />
     </div>
   );
 }
