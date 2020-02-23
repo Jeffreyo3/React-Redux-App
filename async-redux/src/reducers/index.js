@@ -37,7 +37,7 @@ function reducer(state = initialState, action) {
           count: action.payload.count,
           previous: action.payload.previous,
           next: action.payload.next,
-          results: [...action.payload.results]
+          results: action.payload.results
         },
         isLoading: false
       };
@@ -61,10 +61,11 @@ function reducer(state = initialState, action) {
       }
 
     case ADD_DETAIL:
+      const array = state.detailResults.filter(pokemon => pokemon.url !== action.payload.url)
       return {
         ...state,
         isLoading: false,
-        detailResults: action.payload
+        detailResults: [...array, action.payload]
       }
 
 
