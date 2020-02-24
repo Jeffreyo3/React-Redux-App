@@ -1,31 +1,38 @@
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-    width: 100%;
-    padding: 0 2% 0 5.5%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 2% 0 5.5%;
 }
 
-  
 .pokemonCardName {
-    color: paleturquoise;
-    font-size: .7rem;
-    margin: 6.5% 0 4%;
-    
-  }
+  color: paleturquoise;
+  font-size: 0.7rem;
+  /* margin: 6.5% 0 4%; */
 
+  max-width: 70%;
+  word-break: keep-all;
+  display: flex;
+  align-items: center;
+
+  margin: 0 auto;
+  width: 68%;
+  line-height: 1.5;
+}
 
 .card-type-container {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 70px;
+  width: 100%;
 }
 
 .card-type-container img {
-    margin: 4% 4% 2% 0;
+  margin: 4% 4% 2% 0;
 }
 
 .type-icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
