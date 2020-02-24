@@ -10,8 +10,16 @@
 .pokemonCardName {
     color: paleturquoise;
     font-size: .7rem;
-    margin: 6.5% 0 4%;
+    /* margin: 6.5% 0 4%; */
+
+    max-width: 70%;
+    word-break: keep-all;
+    display: flex;
+    align-items: center;
     
+    margin: 0 auto;
+    width: 68%;
+    line-height: 1.5;
   }
 
 
