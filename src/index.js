@@ -7,12 +7,14 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
-import { createLogger } from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 
 import reducer from './reducers';
 
-const logger = createLogger({})
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+// const logger = createLogger({})
+const store = createStore(reducer, applyMiddleware(thunk,
+    // logger
+));
 
 ReactDOM.render(
     <BrowserRouter>
