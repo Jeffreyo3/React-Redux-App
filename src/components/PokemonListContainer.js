@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addPokemon, getNewPKMNData } from '../actions';
-import PokemonCard from './PokemonCard';
+import './pokemon-list-container.css'
+import PokemonList from './PokemonList'
 
 const PokemonListContainer = props => {
     const [number, setNumber] = useState(50);
@@ -13,7 +14,7 @@ const PokemonListContainer = props => {
     return (
         <>
 
-            <div className="pkmnListDiv">
+            <div className="pkmnListContainer">
                 <div className="buttons">
                     {props.data.previous === null ?
                         null :
@@ -32,7 +33,11 @@ const PokemonListContainer = props => {
                                     props.getNewPKMNData(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${number}`);
                                 }}> S T A R T </button>
                         </>) :
-                        null}
+                        <button className="getButton"
+                            onClick={() => {
+                                props.getNewPKMNData(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${number}`);
+                            }}> S T A R T </button>
+                    }
 
                     {props.data.next === null ?
                         null :
@@ -45,15 +50,15 @@ const PokemonListContainer = props => {
                 {props.isLoading ? (
                     <div>Catching 'em All!</div>
                 ) : (
+                    <>
                         <div className="pokemon-list">
-                            {console.log(props.results)}
                             {props.results.map(pokemon => {
-                                // console.log(pokemon)
-                                return <PokemonCard key={pokemon.url} pokemon={pokemon} addPokemon={props.addPokemon} />
+                                return <PokemonList key={pokemon.url} pokemon={pokemon} addPokemon={props.addPokemon} />
                             })}
                         </div>
+                        <div style={{marginTop: "2%"}}/>
+                        </>
                     )}
-
             </div>
         </>
     );

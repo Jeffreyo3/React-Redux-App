@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removePokemon } from '../actions';
+import './pokemon-team-card.css';
 
 const PokemonTeamCard = (props) => {
     const handleRemovePokemon = () => {
@@ -10,7 +11,7 @@ const PokemonTeamCard = (props) => {
     return (
         <div className="pokemonTeamCard">
 
-            <div className="remove-button" onClick={handleRemovePokemon}>
+            <div className="add-remove-button" onClick={handleRemovePokemon}>
                 RELEASE
             </div>
             <h3 className="pokemonTeamCardName">

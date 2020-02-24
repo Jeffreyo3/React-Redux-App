@@ -1,0 +1,18 @@
+.pokemonTeamCard {
+    width: auto;
+    max-width: 250px;
+    height: auto;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .pokemonTeamCardName {
+    margin: 2% auto;
+    font-size: .7em;
+  }
+
+  .add-remove-button {
+    font-size: .7em;
+    cursor: pointer
+  }
