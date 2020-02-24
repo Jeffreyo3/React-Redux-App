@@ -129,6 +129,7 @@
   width: 50%;
 }
 
-.add-button {
+.add-remove-button {
   font-size: .7em;
+  cursor: pointer
 }

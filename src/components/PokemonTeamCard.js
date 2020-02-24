@@ -10,7 +10,7 @@ const PokemonTeamCard = (props) => {
     return (
         <div className="pokemonTeamCard">
 
-            <div className="remove-button" onClick={handleRemovePokemon}>
+            <div className="add-remove-button" onClick={handleRemovePokemon}>
                 RELEASE
             </div>
             <h3 className="pokemonTeamCardName">
