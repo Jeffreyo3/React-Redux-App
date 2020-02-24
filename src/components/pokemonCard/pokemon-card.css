@@ -1,15 +1,15 @@
 
 .sprite {
-    height: 120px;
-    width: 120px;
-  }
+  height: 120px;
+  width: 120px;
+}
 
   
-  .pokemonCard-border {
-    border: 1px solid lightslategrey;
-    border-radius: 10px;
-    margin: 2% auto 0;
-  }
+.pokemonCard-border {
+  border: 1px solid lightslategrey;
+  border-radius: 10px;
+  margin: 2% auto 0;
+}
 
 .pokemonCard {
   display: flex;
@@ -17,9 +17,88 @@
   align-items: center;
   justify-content: space-between;
   border: 12px solid #FCF544;
-  background-color: rgb(36, 129, 36);
+  background-color: black;
   border-radius: 10px;
   padding: 1.2% 0;
   width: 220px;
   height: 308px;
+}
+
+/* Background gradients for different types */
+.bug {
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+    linear-gradient(to bottom, rgb(216,224,48), rgb(168,184,32));
+}
+
+.dark {
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(56,56,56), rgb(112,88,72));
+}
+
+.dragon {
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(184,160,248), rgb(112,56,248));
+}
+
+.electric {
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .45),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(248,248,120), rgb(248,208,48));
+}
+
+.fairy{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .1)),
+   linear-gradient(to bottom, rgb(247,222,247), rgb(222,165,222));
+}
+.fighting{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(248,208,48), rgb(240,128,48));
+
+}
+.fire{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(240,128,48), rgb(192,48,40));
+}
+.flying{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(200,192,248), rgb(168,144,240));
+}
+.ghost{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(168,144,240), rgb(112,88,152));
+}
+.grass{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(192,248,96), rgb(120,200,80));
+}
+.ground{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(248,248,120),rgb(224,192,104));
+}
+.ice{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(208,248,232), rgb(152,216,216));
+}
+.normal{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(216,216,192), rgb(168,168,120));
+}
+.poison{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(216,128,184), rgb(160,64,160));
+}
+.psychic{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(248,192,176), rgb(248,88,136));
+}
+.rock{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(224,192,104), rgb(184,160,56));
+}
+.steel{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(216,216,192), rgb(184,184,208));
+}
+.water{
+  background-image: linear-gradient( to bottom, rgb(128,128,128, .55),rgb(128,128,128, .15), rgb(128,128,128, .7)),
+   linear-gradient(to bottom, rgb(152,216,216), rgb(104,144,240));
 }
