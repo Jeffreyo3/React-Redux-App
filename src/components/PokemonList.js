@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PokemonCard from './PokemonCard';
+import PokemonCard from './pokemonCard/PokemonCard';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { setDetailResults } from '../actions'
@@ -37,9 +37,7 @@ const PokemonList = props => {
     }
 
     return (
-        <div>
-            <PokemonCard pokemon={details} addPokemon={props.addPokemon} handleAddPokemon={handleAddPokemon} />
-        </div>
+        <PokemonCard pokemon={details} addPokemon={props.addPokemon} handleAddPokemon={handleAddPokemon} />
     )
 }
 

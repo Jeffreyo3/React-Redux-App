@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removePokemon } from '../actions';
+import './pokemon-team-card.css';
 
 const PokemonTeamCard = (props) => {
     const handleRemovePokemon = () => {

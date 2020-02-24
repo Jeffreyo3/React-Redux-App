@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addPokemon, getNewPKMNData } from '../actions';
-// import PokemonCard from './PokemonCard';
+import './pokemon-list-container.css'
 import PokemonList from './PokemonList'
 
 const PokemonListContainer = props => {
@@ -14,7 +14,7 @@ const PokemonListContainer = props => {
     return (
         <>
 
-            <div className="pkmnListDiv">
+            <div className="pkmnListContainer">
                 <div className="buttons">
                     {props.data.previous === null ?
                         null :
@@ -51,9 +51,7 @@ const PokemonListContainer = props => {
                     <div>Catching 'em All!</div>
                 ) : (
                         <div className="pokemon-list">
-                            {console.log(props.results)}
                             {props.results.map(pokemon => {
-                                // console.log(pokemon)
                                 return <PokemonList key={pokemon.url} pokemon={pokemon} addPokemon={props.addPokemon} />
                             })}
                         </div>
