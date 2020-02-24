@@ -50,13 +50,15 @@ const PokemonListContainer = props => {
                 {props.isLoading ? (
                     <div>Catching 'em All!</div>
                 ) : (
+                    <>
                         <div className="pokemon-list">
                             {props.results.map(pokemon => {
                                 return <PokemonList key={pokemon.url} pokemon={pokemon} addPokemon={props.addPokemon} />
                             })}
                         </div>
+                        <div style={{marginTop: "2%"}}/>
+                        </>
                     )}
-
             </div>
         </>
     );
