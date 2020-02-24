@@ -23,19 +23,19 @@
 
 .App-footer {
   background-color: #c04f33;
-  min-height: 5vh;
+  min-height: 3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: .6rem;
+  font-size: 0.3rem;
   color: white;
+  font-weight: lighter;
 }
 
 .App-link {
   color: #09d3ac;
 }
-
 
 .left-bar {
   width: 20%;
@@ -44,6 +44,10 @@
   /* height: 100%; */
   color: white;
   /* margin: auto 0; */
+}
+
+.left-bar .userTeamDiv p {
+  line-height: 1.5;
 }
 
 .main {
